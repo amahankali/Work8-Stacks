@@ -1,0 +1,20 @@
+#pretty? picture
+ident
+sphere
+110 0 0 75
+sphere
+-110 0 0 75
+box
+-80 -120 0 75 75 75
+torus
+-30 -335 0 25 175
+rotate
+x 30
+rotate
+y -20
+move
+250 400 0
+apply
+display
+save
+face2.png
