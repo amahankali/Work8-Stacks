@@ -59,7 +59,6 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
 
       //draw the box
       draw_polygons(polygons, s, c);
-      display(s);
 
       //clear polygons
       polygons->lastcol = 0;
@@ -77,7 +76,6 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
 
       //draw the sphere
       draw_polygons(polygons, s, c);
-      display(s);
 
       //clear polygons
       polygons->lastcol = 0;
@@ -95,7 +93,6 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
 
       //draw the torus
       draw_polygons(polygons, s, c);
-      display(s);
 
       //clear polygons
       polygons->lastcol = 0;
@@ -179,9 +176,9 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
 
       //modify coordStack
       struct matrix * topTrans = coordStack->data[coordStack->top];
-      matrix_mult(tmp, topTrans);
-
-      free_matrix(tmp);
+      matrix_mult(topTrans, tmp);
+      free_matrix(topTrans);
+      coordStack->data[coordStack->top] = tmp;
     }
     else if(strncmp(line, "move", strlen(line)) == 0) {
       fgets(line, sizeof(line), f);
@@ -193,9 +190,9 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
 
       //modify coordStack
       struct matrix * topTrans = coordStack->data[coordStack->top];
-      matrix_mult(tmp, topTrans);
-
-      free_matrix(tmp);
+      matrix_mult(topTrans, tmp);
+      free_matrix(topTrans);
+      coordStack->data[coordStack->top] = tmp;
     }
     else if(strncmp(line, "rotate", strlen(line)) == 0) {
       fgets(line, sizeof(line), f);
@@ -213,9 +210,9 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
 
       //modify coordStack
       struct matrix * topTrans = coordStack->data[coordStack->top];
-      matrix_mult(tmp, topTrans);
-
-      free_matrix(tmp);
+      matrix_mult(topTrans, tmp);
+      free_matrix(topTrans);
+      coordStack->data[coordStack->top] = tmp;
     }
 
 /*
