@@ -231,7 +231,7 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
 
     else if(strncmp(line, "display", strlen(line)) == 0) {
       //printf("DISPLAY\t%s", line);
-      clear_screen(s);
+      //clear_screen(s);
       draw_polygons(polygons, s, c);
       draw_polygons(edges, s, c);
       display(s);
