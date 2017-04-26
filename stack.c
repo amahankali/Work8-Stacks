@@ -49,6 +49,7 @@ void push( struct stack *s ) {
   }
 
   copy_matrix( s->data[ s->top ], m);
+  m->lastcol = s->data[s->top]->lastcol;
 
   s->top++;
   s->data[ s->top ] = m;  

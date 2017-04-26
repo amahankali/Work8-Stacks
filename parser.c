@@ -59,6 +59,7 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
 
       //draw the box
       draw_polygons(polygons, s, c);
+      display(s);
 
       //clear polygons
       polygons->lastcol = 0;
@@ -76,6 +77,7 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
 
       //draw the sphere
       draw_polygons(polygons, s, c);
+      display(s);
 
       //clear polygons
       polygons->lastcol = 0;
@@ -93,6 +95,7 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
 
       //draw the torus
       draw_polygons(polygons, s, c);
+      display(s);
 
       //clear polygons
       polygons->lastcol = 0;
@@ -240,7 +243,7 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
       fgets(line, sizeof(line), f);
       *strchr(line, '\n') = 0;
       //printf("SAVE\t%s\n", line);
-      clear_screen(s);
+      //clear_screen(s);
       draw_polygons(polygons, s, c);
       draw_lines(edges, s, c);
       save_extension(s, line);
