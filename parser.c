@@ -163,9 +163,6 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
       //clear edges
       edges->lastcol = 0;
     }
-
-//////////////////////////////////TRANSFORMATIONS//////////////////////////////////
-
     else if(strncmp(line, "scale", strlen(line)) == 0) {
       fgets(line, sizeof(line), f);
       //printf("SCALE\t%s", line);
@@ -214,38 +211,14 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
       free_matrix(topTrans);
       coordStack->data[coordStack->top] = tmp;
     }
-
-/*
-    else if(strncmp(line, "clear", strlen(line)) == 0) {
-      //printf("clear\t%s", line);
-      edges->lastcol = 0;
-      polygons->lastcol = 0;
-    }
-    else if(strncmp(line, "ident", strlen(line)) == 0) {
-      //printf("IDENT\t%s", line);
-      ident(transform);
-    }
-    else if(strncmp(line, "apply", strlen(line)) == 0) {
-      //printf("APPLY\t%s", line);
-      if(edges->lastcol >= 2) matrix_mult(transform, edges);
-      if(polygons->lastcol >= 3) matrix_mult(transform, polygons);
-    }
-*/
-
     else if(strncmp(line, "display", strlen(line)) == 0) {
       //printf("DISPLAY\t%s", line);
-      //clear_screen(s);
-      draw_polygons(polygons, s, c);
-      draw_polygons(edges, s, c);
       display(s);
     }
     else if(strncmp(line, "save", strlen(line)) == 0) {
       fgets(line, sizeof(line), f);
       *strchr(line, '\n') = 0;
       //printf("SAVE\t%s\n", line);
-      //clear_screen(s);
-      draw_polygons(polygons, s, c);
-      draw_lines(edges, s, c);
       save_extension(s, line);
     }
   }
