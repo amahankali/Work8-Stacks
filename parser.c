@@ -8,6 +8,7 @@
 #include "draw.h"
 #include "matrix.h"
 #include "parser.h"
+#include "stack.h"
 
 void parse_file(char * filename, struct stack * coordStack, struct matrix * edges, struct matrix * polygons, screen s)
 {
@@ -210,6 +211,8 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
 
       free_matrix(tmp);
     }
+
+/*
     else if(strncmp(line, "clear", strlen(line)) == 0) {
       //printf("clear\t%s", line);
       edges->lastcol = 0;
@@ -224,6 +227,8 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
       if(edges->lastcol >= 2) matrix_mult(transform, edges);
       if(polygons->lastcol >= 3) matrix_mult(transform, polygons);
     }
+*/
+
     else if(strncmp(line, "display", strlen(line)) == 0) {
       //printf("DISPLAY\t%s", line);
       clear_screen(s);
