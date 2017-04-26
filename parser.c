@@ -166,6 +166,9 @@ void parse_file(char * filename, struct stack * coordStack, struct matrix * edge
       //clear edges
       edges->lastcol = 0;
     }
+
+//////////////////////////////////TRANSFORMATIONS//////////////////////////////////
+
     else if(strncmp(line, "scale", strlen(line)) == 0) {
       fgets(line, sizeof(line), f);
       //printf("SCALE\t%s", line);
