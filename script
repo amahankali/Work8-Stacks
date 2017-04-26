@@ -1,5 +1,6 @@
 #OVERALL
 #BODY
+push
 rotate
 y -30
 move
@@ -8,8 +9,8 @@ box
 -100 125 50 200 250 100
 #HEAD
 push
-rotate
-y 90
+#rotate
+#y 90
 move
 0 175 0
 sphere
