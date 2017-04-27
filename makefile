@@ -25,7 +25,7 @@ stack.o: stack.c stack.h
 	$(CC) $(CFLAGS) -c stack.c
 
 run: all
-	./main script
+	./main arvindscript
 
 clean:
 	rm *.o *~

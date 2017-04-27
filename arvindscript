@@ -1,0 +1,76 @@
+##################################center the drawing
+move
+250 250 150
+rotate
+x 15
+rotate
+y 40
+rotate
+z 15
+push
+##################################south wing
+box
+-50 -50 0 100 50 50
+move
+0 0 -50
+scale
+2 2 2
+push
+box
+-50 -50 0 100 50 50
+pop
+pop
+##################################east wing
+rotate
+z 90
+push
+box
+-50 -50 0 100 50 50
+move
+0 0 -50
+scale
+2 2 2
+push
+box
+-50 -50 0 100 50 50
+pop
+pop
+##################################north wing
+rotate
+z 90
+push
+box
+-50 -50 0 100 50 50
+move
+0 0 -50
+scale
+2 2 2
+push
+box
+-50 -50 0 100 50 50
+pop
+pop
+##################################west wing
+rotate
+z 90
+push
+box
+-50 -50 0 100 50 50
+move
+0 0 -50
+scale
+2 2 2
+push
+box
+-50 -50 0 100 50 50
+pop
+pop
+##################################middle chamber
+move
+0 0 50
+push
+sphere
+0 0 0 50
+pop
+pop
+display
